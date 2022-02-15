@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Document</title>
+</head> 
+  <body>
+    <header>
+
+    </header>
+    <main>
+      <h1 class="titulo">CALCULADORA DE PROPINAS</h1>
+      <section>
+      <div class ="caja-propina">
+      <div class ="cal-propina">
+       <h2 class="abono_total"> Abono total($) </h2>
+       <input type="number" value="0.00" id="total">
+       <p id="mensAbono">El monto ingresado no puede ser 0</p>
+       <h2 id="">Ingrese porcentaje de propina % </h2>
+       <select id="propIng">
+        <option value="15">15%-excelente</option>
+        <option value="10">10%-bueno</option>
+        <option value="2">2%-malo</option>
+      </select>
+       <h2 class=>En cuantas personas se dividira la propina?</h2>
+       <span id="prop-per" class="val">
+        0
+    </span>
+       <input type="range" min="1" max="15" id="divProp">
+       <button id="btn">CALCULAR</button>
+       <h2>Propina por persona</h2>
+       <input type="text" disabled id="prop_persona">
+       <h2>Total por persona</h2>
+       <input type="text" disabled  id="total_persona">
+
+      </div>
+  
+    </div>
+</section>
+    </main>
+    <footer>
+  
+    </footer>
+  
+
+
+  <script src="scripts.js"></script>
+</body>
+</html>
