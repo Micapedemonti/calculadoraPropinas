@@ -1,34 +1,183 @@
 *{margin:0;
-  padding:0;
- }
- body {
-	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-	animation: gradient 7s ease infinite;
-	height: 100vh;
-}
+	padding:0;
+	box-sizing: border-box;
+   }
+   body {
+	   
+  /* background-image: linear-gradient(-45deg, #080c0bf8, #12191afb);  */
+	  background-size: 100%;
+	  animation: gradient 5s ease infinite;
+	  background-repeat: no-repeat;
+	  display: grid;
+	  grid-template-columns: 1fr;
+	  background-image: url(../images/Wave-10s-1707px.png);
+  }
+  .cuerpo{
+	display: grid;
+    grid-template-columns:40% 50%;
+    grid-template-rows:auto;
+    gap: 1%;
+	justify-items: center;
+  }
+  .coloCab{
+	background-image:  linear-gradient(-25deg,#5ae7d1,white);	  height: 5%;
+	  border-radius: 18px;
 
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+  }
+  .body-main{
+	  display: flex;
+	  flex-wrap: wrap;
+	  align-content: space-around;
+	  margin: 5%;
+	  flex-direction: row-reverse;
+  }
+  .sobreCal{
+	  display: flex;
+	  flex-direction: column;
+	  align-content: center;
+  }
+.tituloCal{
+margin: 5%;
 }
-
-.cal-propina{
-  background-color: #ffffff;
-  width: 450px;
-  padding: 50px 40px;
-  border-radius: 10px;
-  position: fixed;
-  z-index: 100;
-  transform: translate(-50%,-50%);
-  top: 50%;
-  left: 50%;
-  box-shadow: 0 30px 50px rgba(0,0,0,0.1);
+.tituloCal h2{
+	font-size: 2rem;
+	font-family:'Quicksand', sans-serif; 
+	color: black;
 }
+.textoCal{
+	margin: 5%;
+}
+.textoCal p{
+	color: black;
+	font-size:1.5rem;
+	font-family: 'Quicksand', sans-serif;
+}
+  
+  #container{
+	  width: 450px;
+	  background-color: #FFF;
+	  border-radius: 18px;
+	  text-align: center;
+	  box-shadow:10px 10px 5px lightblue;
+	  margin: 5%;
+  }
+  
+  h1{
+	  background-color: #cef5e4;
+	  padding: 10px 0;
+	  font-size: 10rem;
+	  border-radius: 18px;
+	  font-family: 'Quicksand', sans-serif;
+  }
+   p{
+	  color:black;
+	  font-family:'Quicksand', sans-serif; 
+	  font-size: 1rem;
+   }
+   .control{
+	  margin: 25px 0;
+  }
+  
+  input{
+	  font-size: 28px;
+	  margin-top: 20px;
+	  border-radius: 25px;
+  }
+  .facturaTotal{
+	background-image:  linear-gradient(-25deg,#5ae7d1,white);
+	  border-radius: 18px;
+	  padding: 25px 0 35px;
+  }
+  #propIng{
+	  border: none;
+	  outline: none;
+	  border: 1px solid #16a465;
+	  color: #0c0b0b;
+	  font-size: 18px;
+	  margin-top: 20px;
+	  padding: 11px 34px;
+	  border-radius: 25px;
+	  width: 75%;
+  }
+  
+  #btn{
+	  color: white;
+	  background: #5ae7d1;
+	  border: 1px solid transparent;
+	  font-size: 17px;
+	  border-radius: 25px;
+	  padding: 14px 29px;
+	  margin: 25px;
+	  transition: all .3s ease;
+	  width: 50%;
+  }
+  #btn:hover{
+	  background-color: #16a465;
+  }
+  #botton{
+	  color: white;
+	  background: #5ae7d1;
+	  border: 1px solid transparent;
+	  font-size: 17px;
+	  border-radius: 25px;
+	  padding: 14px 29px;
+	  margin: 25px;
+	  transition: all .3s ease;
+	  width: 50%;
+  }
+  #botton:hover{
+	background-color: #16a465;
+  }
+  
+  .ok{
+	  border: green 2px solid;;
+  }
+  .noOk{
+	  border: red 2px solid;;
+  }
+  input:focus{
+	outline:none;
+  }
+  #total{
+	  width: 100px;
+	  text-align: right;
+	  color: black;
+  }
+  .cuerpobtn{
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  flex-direction: column;
+  }
+  .rango{
+	  display: flex;
+	  align-items: flex-end;
+  }
+  .numpers{
+	  margin: 3%;
+  }
+  #divProp{
+	  margin: 2%;
+  }
+  #check{
+	  display: flex;
+	  align-items: center;
+	  justify-content: space-evenly;
+  }
+  #USD{
+	  align-items: center;
+      display: flex;
+	  align-items: flex-end;
+	  padding:10%;
+  }
+  #ARG{
+	  display: flex;
+	  align-items: center;
+	  padding:10%;
+	  align-items: flex-end;
+  }
+  .piePagina{
+	  width: 100%;
+	  height: auto;
+	  background-color: #7e7e7e;
+  }
