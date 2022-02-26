@@ -43,23 +43,33 @@ margin: 5%;
 	font-size: 2rem;
 	font-family:'Quicksand', sans-serif; 
 	color: black;
+	-webkit-text-stroke: 1.5px white;
+  color: transparent; 
 }
 .textoCal{
 	margin: 5%;
+	background-color:#5ae7d1;
+	border-style:initial;
+	border-radius: 50px;
+	opacity: 40%;
 }
 .textoCal p{
-	color: black;
-	font-size:1.5rem;
+	color: white;
+	font-size:1.3rem;
 	font-family: 'Quicksand', sans-serif;
+	padding: 5%;
+	font-style: oblique;
 }
   
   #container{
 	  width: 450px;
 	  background-color: #FFF;
-	  border-radius: 18px;
+	  border-radius: 50px;
 	  text-align: center;
 	  box-shadow:10px 10px 5px lightblue;
 	  margin: 5%;
+	  height: fit-content;
+	  border: black solid 1px ;
   }
   
   h1{
@@ -85,7 +95,7 @@ margin: 5%;
   }
   .facturaTotal{
 	background-image:  linear-gradient(-25deg,#5ae7d1,white);
-	  border-radius: 18px;
+	  border-radius: 50px;
 	  padding: 25px 0 35px;
   }
   #propIng{
@@ -176,8 +186,42 @@ margin: 5%;
 	  padding:10%;
 	  align-items: flex-end;
   }
-  .piePagina{
-	  width: 100%;
-	  height: auto;
-	  background-color: #7e7e7e;
+  /* MEDIASQUERYS */
+  @media only screen and (max-width:1300px){
+	.tituloCal h2{
+		font-size: 1.5rem;
+	}
+	.textoCal p{
+		color: black;
+		font-size:1rem;
+	}
   }
+
+  @media only screen and (max-width: 990px) {
+.cuerpo{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.body-main{
+	width: 60%;
+}
+#container{
+	width: 350px;
+}
+.tituloCal{
+	margin: 0%;
+}
+.tituloCal h2{
+	font-size: 1.2rem;	
+}
+.sobreCal{
+	display: flex;
+	align-items: center;
+}
+.textoCal p{
+	color: black;
+	font-size:1rem;
+}
+
+}
