@@ -48,19 +48,17 @@ function resetear() {
   }
 
 //   FUNCION PARA CONVERTIR MONEDA
-function convertir(){
-   
-    console.log("clickeo")
+function convertir(){  
     if (dolar.checked===true){
-    dolarPrecio= 106;
-    calculos(dolarPrecio);
-   SDS(dolarPrecio);
+     dolarPrecio= 106;
+        calculos(dolarPrecio);
+        SDS(dolarPrecio);
     }else if (dolar.checked===false){
         calculos();
         SDS();
-        console.log("no clickeo")
     }
 }
+
 // FUNCION DEL ARRAY DE LA CLASE 
 function arrayCalculadora(){
     CalculadoraArray.push(new Calculadora( abonoTotal.value,propinas.value,personas.value, propinasDivPersonas.value, resultado.value))
@@ -94,17 +92,21 @@ abonoTotal.addEventListener("input", function(){
         mensaje(mensajePropina);       
 }
 )
+let textWrapper = document.querySelector('.ml6 .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-// array de porcentaje
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml6 .letter',
+    translateY: ["1.1em", 0],
+    translateZ: 0,
+    duration: 750,
+    delay: (el, i) => 50 * i
+  }).add({
+    targets: '.ml6',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
 
-// const propinas=[
-//     {
-//     value: 1,
-//     title: "excelente - 15%"
-// }, {
-//     value: 2,
-//     title: "bien - 10%"
-// }, {
-//     value: 3,
-//     title: "malo - 2%"
-// }];​
