@@ -47,17 +47,40 @@ function resetear() {
     document.getElementById("formulario").reset();
   }
 
-//   FUNCION PARA CONVERTIR MONEDA
-function convertir(){  
-    if (dolar.checked===true){
-     dolarPrecio= 106;
-        calculos(dolarPrecio);
-        SDS(dolarPrecio);
-    }else if (dolar.checked===false){
-        calculos();
-        SDS();
-    }
+// FUNCIONES PARA INGRESAR ABONO TOTAL
+  function montoMenor(){
+    abonoTotal.classList.add("noOk");
+    abonoTotal.classList.remove("ok");
+ mensajePropina="el monto no puede ser 0.00"
 }
+
+function montoMayor(){
+    abonoTotal.classList.remove("noOk");
+    abonoTotal.classList.add("ok");
+   mensajePropina="el monto debe ser mayor a 10"  
+}
+
+// FUNCION EVENTO PARA EL INPUT DEL ABONO TOTAL CON OPERADOR TERNARIO
+abonoTotal.addEventListener("input", function(){
+    parseInt(abonoTotal.value )<10 ? montoMenor() : montoMayor();
+
+    mensaje(mensajePropina); 
+})
+  //   FUNCIONES DEL IF Y ELSE  USD
+function delIf(){
+    (dolar.checked===true)
+         dolarPrecio= 106;
+     calculos(dolarPrecio);
+    SDS(dolarPrecio);
+ }
+ function delElseIf(){
+  (dolar.checked===false)
+         convertirPesoArg();
+ }
+ // FUNCION PARA CONVERTIR A USD CON OPERADOR TERNARIO
+ function convertir(){
+     dolar.checked===true ? delIf():delElseIf();
+ }
 
 // FUNCION DEL ARRAY DE LA CLASE 
 function arrayCalculadora(){
@@ -92,6 +115,8 @@ abonoTotal.addEventListener("input", function(){
         mensaje(mensajePropina);       
 }
 )
+
+// LIBRERIAS
 let textWrapper = document.querySelector('.ml6 .letters');
 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
@@ -110,3 +135,4 @@ anime.timeline({loop: true})
     delay: 1000
   });
 
+ 
