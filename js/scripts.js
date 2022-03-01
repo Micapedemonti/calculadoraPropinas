@@ -63,8 +63,8 @@ function montoMayor(){
 // FUNCION EVENTO PARA EL INPUT DEL ABONO TOTAL CON OPERADOR TERNARIO
 abonoTotal.addEventListener("input", function(){
     parseInt(abonoTotal.value )<10 ? montoMenor() : montoMayor();
-
     mensaje(mensajePropina); 
+    console.log("input")
 })
   //   FUNCIONES DEL IF Y ELSE  USD
 function delIf(){
@@ -75,7 +75,7 @@ function delIf(){
  }
  function delElseIf(){
   (dolar.checked===false)
-         convertirPesoArg();
+        //  convertirPesoArg();
  }
  // FUNCION PARA CONVERTIR A USD CON OPERADOR TERNARIO
  function convertir(){

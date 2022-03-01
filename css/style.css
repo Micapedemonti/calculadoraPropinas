@@ -12,6 +12,12 @@
 	  grid-template-columns: 1fr;
 	  background-image: url(../images/Wave-10s-1707px.png);
   }
+
+ .rango input{ 
+	 color: #0c0b0b;
+	 background-color: #16a465;
+ }
+
   .cuerpo{
 	display: grid;
     grid-template-columns:40% 50%;
