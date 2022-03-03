@@ -7,6 +7,7 @@ let btn=document.getElementById("btn");
 let dolar=document.getElementById("dolar");
 let pesoArgentino=document.getElementById("pesoArg")
 let dolarPrecio=1;
+let pesoArgen= 1;
 
 const propinas= document.getElementById("propIng");
 const personas = document.getElementById("divProp");
@@ -22,9 +23,9 @@ personas.onchange= ()=>{
 // CLASES
 class Calculadora{
     constructor(abonoTotal,propinas, personas, propinasDivPersonas,resultado){
-      this.abono=abonoTotal,
-      this.propi=propinas,
-      this.perso=personas,
+      this.abonoTotal=abonoTotal,
+      this.propinas=propinas,
+      this.personas=personas,
       this.resultadoUno=propinasDivPersonas,
       this.resultadoDos=resultado;
     }
@@ -66,21 +67,35 @@ abonoTotal.addEventListener("input", function(){
     mensaje(mensajePropina); 
     console.log("input")
 })
-  //   FUNCIONES DEL IF Y ELSE  USD
-function delIf(){
-    (dolar.checked===true)
+  //   FUNCIONES DEL CLICK USD Y CLICK ARG
+function clickDolar(){
          dolarPrecio= 106;
      calculos(dolarPrecio);
     SDS(dolarPrecio);
  }
- function delElseIf(){
-  (dolar.checked===false)
-        //  convertirPesoArg();
+ function clickArg(){
+dolarPrecio= 1;
+  calculos(dolarPrecio);
+  SDS(dolarPrecio);
  }
+
+// EVENTOS DEL CLICK USD Y ARG
+ dolar.addEventListener("click",function(){
+   clickDolar();
+ })
+ pesoArg.addEventListener("click",function(){
+  clickArg()
+})
+
+
+
+
+
  // FUNCION PARA CONVERTIR A USD CON OPERADOR TERNARIO
  function convertir(){
-     dolar.checked===true ? delIf():delElseIf();
- }
+     dolar.checked===true ? clickDolar():clickArg();
+ pesoArgentino.checked===true? clickArg():clickDolar();
+}
 
 // FUNCION DEL ARRAY DE LA CLASE 
 function arrayCalculadora(){
@@ -134,5 +149,3 @@ anime.timeline({loop: true})
     easing: "easeOutExpo",
     delay: 1000
   });
-
- 
