@@ -47,10 +47,8 @@ margin: 5%;
 }
 .ml6 {
 	position: relative;
-	font-weight: 900;
-	font-size: 2em;
-	font-family:'Quicksand', sans-serif; 
-
+	font-size: 2.2em;
+	font-family:'Bungee Inline';
   }
   
   .ml6 .text-wrapper {
@@ -78,11 +76,12 @@ margin: 5%;
 	font-family: 'Quicksand', sans-serif;
 	padding: 5%;
 	font-style: oblique;
+	font-weight: bold;
 }
-.animate__animated.animate__backInLeft {
+.animate_animated.animate_backInLeft {
 	animation-duration: 1.5s
   }
-.animate__animated.animate__backInRight{
+.animate_animated.animate_backInRight{
 	animation-duration: 1.5s
 }
   
@@ -97,17 +96,19 @@ margin: 5%;
 	  border: black solid 1px ;
   }
   
-  h1{
+  /* h1{
 	  background-color: #cef5e4;
 	  padding: 10px 0;
 	  font-size: 10rem;
 	  border-radius: 18px;
 	  font-family: 'Quicksand', sans-serif;
-  }
+	  font-weight: bold;
+  } */
    p{
 	  color:black;
 	  font-family:'Quicksand', sans-serif; 
 	  font-size: 1rem;
+	  font-weight: bold;
    }
    .control{
 	  margin: 25px 0;
@@ -175,7 +176,7 @@ margin: 5%;
   }
   #total{
 	  width: 100px;
-	  text-align: right;
+	  text-align: center;
 	  color: black;
   }
   .cuerpobtn{
