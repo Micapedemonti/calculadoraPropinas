@@ -15,6 +15,7 @@ const mensAbono=document.getElementById("mensAbono");
 const resultado=document.getElementById("total_persona");
 const texto=document.getElementById("texto");
 const CalculadoraArray=[]
+const popup=document.querySelector("#popup-mensaje");
 
 personas.onchange= ()=>{
     texto.innerHTML=personas.value
@@ -80,15 +81,23 @@ dolarPrecio= 1;
  }
 
 // EVENTOS DEL CLICK USD Y ARG
+
  dolar.addEventListener("click",function(){
+   popup.classList.add("popup-active");
+
+   setTimeout(()=>{
+     popup.classList.remove("popup-active");
+   },25000)
+
    clickDolar();
  })
  pesoArg.addEventListener("click",function(){
   clickArg()
+  setTimeout(()=>{
+    popup.classList.remove("popup-active");
+  },0)
+
 })
-
-
-
 
 
  // FUNCION PARA CONVERTIR A USD CON OPERADOR TERNARIO

@@ -212,6 +212,15 @@ margin: 5%;
 	  padding:10%;
 	  align-items: flex-end;
   }
+  #popup-mensaje{
+	display: none;
+	background-color: #5ae7d1;
+	font-size: 5em;
+}  
+#popup-mensaje.popup-active{
+	display: block;
+	font-size: 0.8em;
+} 
   /* MEDIASQUERYS */
   @media only screen and (max-width:1300px){
 	.tituloCal h2{
@@ -249,3 +258,4 @@ margin: 5%;
 }
 
 }
+
