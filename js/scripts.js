@@ -16,6 +16,8 @@ const resultado=document.getElementById("total_persona");
 const texto=document.getElementById("texto");
 const CalculadoraArray=[]
 const popup=document.querySelector("#popup-mensaje");
+const regaloCliente=document.getElementById("prueba");
+const idPokemon= Math.floor(Math.random()*20);
 
 personas.onchange= ()=>{
     texto.innerHTML=personas.value
@@ -139,6 +141,17 @@ abonoTotal.addEventListener("input", function(){
         mensaje(mensajePropina);       
 }
 )
+
+//INCORPORADO FETCH 
+  fetch(` https://pokeapi.co/api/v2/pokemon/${idPokemon}`)
+  .then(response=> response.json())
+  .then((datos)=>{
+    console.log(datos)
+
+    regaloCliente.innerHTML= `
+    <h2> nombre:${datos.name} </h2>
+    <img src=${datos.sprites.front_default} />`
+  })
 
 // LIBRERIAS
 let textWrapper = document.querySelector('.ml6 .letters');
