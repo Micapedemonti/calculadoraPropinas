@@ -90,20 +90,13 @@ margin: 5%;
 	  background-color: #FFF;
 	  border-radius: 50px;
 	  text-align: center;
-	  box-shadow:10px 10px 5px lightblue;
+	  /* box-shadow:10px 10px 5px lightblue; */
+	  box-shadow:16px 14px 20px lightblue;
+
 	  margin: 5%;
 	  height: fit-content;
 	  border: black solid 1px ;
   }
-  
-  /* h1{
-	  background-color: #cef5e4;
-	  padding: 10px 0;
-	  font-size: 10rem;
-	  border-radius: 18px;
-	  font-family: 'Quicksand', sans-serif;
-	  font-weight: bold;
-  } */
    p{
 	  color:black;
 	  font-family:'Quicksand', sans-serif; 
@@ -113,7 +106,10 @@ margin: 5%;
    .control{
 	  margin: 25px 0;
   }
-  
+  #mensAbono{
+	  font-family: 'Quicksand', sans-serif; 
+	  font-size: 0.8rem;
+  }
   input{
 	  font-size: 28px;
 	  margin-top: 20px;
@@ -196,10 +192,12 @@ margin: 5%;
 	  margin: 2%;
   }
   #check{
-	  display: flex;
-	  align-items: center;
-	  justify-content: space-evenly;
-  }
+	display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+  
   #USD{
 	  align-items: center;
       display: flex;
@@ -212,6 +210,9 @@ margin: 5%;
 	  padding:10%;
 	  align-items: flex-end;
   }
+  .mensajeDolar{
+	  flex-direction: column;
+  }
   #popup-mensaje{
 	display: none;
 	background-color: #5ae7d1;
@@ -221,6 +222,57 @@ margin: 5%;
 	display: block;
 	font-size: 0.8em;
 } 
+
+.modal-container-regaloCliente{
+	align-items: center;
+	background-color: rgba(0,.0, .0,.5);
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	top: 0;
+	left: 0;
+	position: fixed;
+	width: 100vw;
+	visibility: hidden;
+}
+.containerRegalo{
+	display: flex;
+	width: 100%;
+}
+#regalo{
+	display: flex;
+	width: 100%;
+	flex-direction: column-reverse;
+    align-items: center;
+}
+#regalo h2{
+	color:black;
+	font-family:'Quicksand', sans-serif; 
+	font-size: 1rem;
+	font-weight: bold;
+} 
+.closeContainer{
+	align-items: end;
+	border: 1px solid aqua;
+	border-radius: 22px;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 300px;
+}
+#cerrarModal{
+	display: inline-block; 
+	 width: 25px;
+	height: 25px; 
+	background-color: #c44a4a;
+	 line-height: 25px; 
+	 border-radius: 10px;  
+}
+.modal-activar{
+visibility: visible;
+}
+
   /* MEDIASQUERYS */
   @media only screen and (max-width:1300px){
 	.tituloCal h2{
@@ -258,4 +310,3 @@ margin: 5%;
 }
 
 }
-

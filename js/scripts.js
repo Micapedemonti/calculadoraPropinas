@@ -13,15 +13,20 @@ const propinas= document.getElementById("propIng");
 const personas = document.getElementById("divProp");
 const mensAbono=document.getElementById("mensAbono");
 const resultado=document.getElementById("total_persona");
-const texto=document.getElementById("texto");
+const textoPer=document.getElementById("texto");
 const CalculadoraArray=[]
 const popup=document.querySelector("#popup-mensaje");
-const regaloCliente=document.getElementById("prueba");
+const regaloCliente=document.getAnimations("regalo");
+const regalo=document.getElementById("regalo")
 const idPokemon= Math.floor(Math.random()*20);
+const cerrarModal=document.getElementById("cerrarModal");
+const abrirModal=document.getElementById("abrirModal");
+const pp=document.getElementById("pp");
 
-personas.onchange= ()=>{
-    texto.innerHTML=personas.value
+personas.oninput= ()=>{
+  textoPer.innerHTML=personas.value
 }
+
 
 // CLASES
 class Calculadora{
@@ -64,6 +69,7 @@ function montoMayor(){
    mensajePropina="el monto debe ser mayor a 10"  
 }
 
+
 // FUNCION EVENTO PARA EL INPUT DEL ABONO TOTAL CON OPERADOR TERNARIO
 abonoTotal.addEventListener("input", function(){
     parseInt(abonoTotal.value )<10 ? montoMenor() : montoMayor();
@@ -81,7 +87,45 @@ dolarPrecio= 1;
   calculos(dolarPrecio);
   SDS(dolarPrecio);
  }
+// FUNCION PARA CONVERTIR A USD CON OPERADOR TERNARIO
+function convertir(){
+  dolar.checked===true ? clickDolar():clickArg();
+pesoArgentino.checked===true? clickArg():clickDolar();
+}
 
+// FUNCION DEL ARRAY DE LA CLASE 
+function arrayCalculadora(){
+ CalculadoraArray.push(new Calculadora( abonoTotal.value,propinas.value,personas.value, propinasDivPersonas.value, resultado.value))
+ console.log(CalculadoraArray);
+ // SE HIZO UN LOCAL STORAGE DONDE SE GUARDARAN LOS REGISTROS DE LOS GASTOS DEL USUARIO EN NUESTRA APLICACION WEB.
+ localStorage.setItem("registroDePagos", JSON.stringify(CalculadoraArray) );
+ 
+}
+
+ // EVENTO PARA ACTIVAR MENSAJE MONTO 
+ abonoTotal.addEventListener("input", function(){
+  if (parseInt(abonoTotal.value )<10 ){
+      abonoTotal.classList.add("noOk");
+      abonoTotal.classList.remove("ok");
+   mensajePropina="el monto no puede ser 0.00"
+   }else {
+      abonoTotal.classList.remove("noOk");
+      abonoTotal.classList.add("ok");
+     mensajePropina="el monto debe ser mayor a 10"  
+ }
+  mensaje(mensajePropina);       
+}
+)
+// EVENTOS PARA ACTIVAR POKEMON REGALO
+  btn.addEventListener("click",function(){
+    pp.classList.add("modal-activar")
+})
+  cerrarModal.addEventListener("click",function(){
+    pp.classList.remove("modal-activar")
+  })
+
+
+ 
 // EVENTOS DEL CLICK USD Y ARG
 
  dolar.addEventListener("click",function(){
@@ -100,57 +144,25 @@ dolarPrecio= 1;
   },0)
 
 })
-
-
- // FUNCION PARA CONVERTIR A USD CON OPERADOR TERNARIO
- function convertir(){
-     dolar.checked===true ? clickDolar():clickArg();
- pesoArgentino.checked===true? clickArg():clickDolar();
-}
-
-// FUNCION DEL ARRAY DE LA CLASE 
-function arrayCalculadora(){
-    CalculadoraArray.push(new Calculadora( abonoTotal.value,propinas.value,personas.value, propinasDivPersonas.value, resultado.value))
-    console.log(CalculadoraArray);
-    // SE HIZO UN LOCAL STORAGE DONDE SE GUARDARAN LOS REGISTROS DE LOS GASTOS DEL USUARIO EN NUESTRA APLICACION MOVIL.
-    localStorage.setItem("registroDePagos", JSON.stringify(CalculadoraArray) );
-    
-}
-    // OBTENER DATOS DE LOCAL STORAGE
-
-// EVENTOS
+// EVENTO PARA RESETEAR CALCULOS
 btn.addEventListener("click",function(resetear){
-    calculos();
-    SDS();
-    convertir();
-   
-    resetear.preventDefault();
-    
-    })
-
-abonoTotal.addEventListener("input", function(){
-        if (parseInt(abonoTotal.value )<10 ){
-            abonoTotal.classList.add("noOk");
-            abonoTotal.classList.remove("ok");
-         mensajePropina="el monto no puede ser 0.00"
-         }else {
-            abonoTotal.classList.remove("noOk");
-            abonoTotal.classList.add("ok");
-           mensajePropina="el monto debe ser mayor a 10"  
-       }
-        mensaje(mensajePropina);       
-}
-)
-
+  calculos();
+  SDS();
+  convertir()
+  resetear.preventDefault();
+  pokemon();
+  })    
 //INCORPORADO FETCH 
+
   fetch(` https://pokeapi.co/api/v2/pokemon/${idPokemon}`)
   .then(response=> response.json())
   .then((datos)=>{
     console.log(datos)
 
-    regaloCliente.innerHTML= `
+    regalo.innerHTML= `
     <h2> nombre:${datos.name} </h2>
     <img src=${datos.sprites.front_default} />`
+
   })
 
 // LIBRERIAS
