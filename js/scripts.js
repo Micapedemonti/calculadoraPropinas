@@ -122,7 +122,7 @@ function pokemon(){
      mensajePropina="el monto debe ser mayor a 10"  
  }
   mensaje(mensajePropina);       
-}
+ }
 )
 
 // Evento para seleccionar numero de personas
